@@ -9,9 +9,6 @@ import theano
 import tensorflow
 import keras
 
-print ("test")
-print("test2")
-print("neurony")
-print("lul")
+
 print("finito testito")
 
