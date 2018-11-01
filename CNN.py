@@ -135,3 +135,14 @@ if (np.max(test_image) > 1):
 prediction = classifier.predict_classes(test_image) # result is an array with one value, ex 1 for dog, 0 for cat
  
 print(class_labels[prediction[0][0]])
+
+###############################################################################################################################
+#################################################################################################################################
+
+# Number of output units in the final layer = number of classes
+
+# output_activation = 'softmax'
+
+# loss = 'categorical_crossentropy'
+
+# y_matrix must be onehotencoded labels.  class_mode = 'categorical'
