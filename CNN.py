@@ -18,6 +18,7 @@ from skimage.transform import resize
 import numpy as np  # for preprocessing image used for prediction
 
 
+dataset_path = "D:/datasets/Cat_Dog dataset"
 
 """ initializing CNN """
 classifier = Sequential()
@@ -96,14 +97,14 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 
 # creating training set from augmentation applied on our training set
 training_set = train_datagen.flow_from_directory(
-              'dataset/training_set',
+               dataset_path + '/training_set',
                target_size=(64, 64),
                batch_size=32,
                class_mode='binary') # for more than 2 - categorical ?
 
 # creating test set from augmentation applied on our test set
 test_set = test_datagen.flow_from_directory(
-           'dataset/test_set',
+            dataset_path + '/test_set',
             target_size=(64, 64),
             batch_size=32,
             class_mode='binary')
@@ -121,7 +122,7 @@ classifier.fit_generator(training_set,
 
 class_labels = {v: k for k, v in training_set.class_indices.items()} # creates a dictionary with mapping, ex. 0 = cat, 1 = dog
  
-test_image = imread('dataset/single_prediction/cat_or_dog_2.jpg')
+test_image = imread(dataset_path + '/single_prediction/cat_or_dog_2.jpg')
 test_image = resize(test_image, (64,64))
 test_image = np.expand_dims(test_image, axis=0) 
 """ Adding another dimension to image, because predict function uses 4 dimensions - last one for batch number 
