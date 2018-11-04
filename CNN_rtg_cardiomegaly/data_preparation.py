@@ -13,6 +13,7 @@ second_class = 'no cardiomegaly'
 config = configparser.ConfigParser()
 config.read('config.ini')
 
+<<<<<<< HEAD
 
 dataset_path = config['Paths']['dataset']
 #test_file_path = 'D:/Users/Anna/CNN/CNN_rtg_cardiomegaly/test_list.txt'
@@ -26,6 +27,30 @@ test_set__path = new_dataset_path + '/test_set'
 ilness_path_test = new_dataset_path + '/test_set/' + first_class
 no_ilness_path_test = new_dataset_path + '/test_set/' + second_class
 
+=======
+
+dataset_path = config['Paths']['dataset']
+#test_file_path = 'D:/Users/Anna/CNN/CNN_rtg_cardiomegaly/test_list.txt'
+#training_file_path = 'C:/Users/Anna/CNN/CNN_rtg_cardiomegaly/train_val_list.txt'
+new_dataset_path = 'D:/datasets/Card dataset'
+
+training_set_path = new_dataset_path + '/training_set'
+ilness_path_training = new_dataset_path + '/training_set/' + first_class
+no_ilness_path_training = new_dataset_path + '/training_set/' + second_class
+test_set__path = new_dataset_path + '/test_set'
+ilness_path_test = new_dataset_path + '/test_set/' + first_class
+no_ilness_path_test = new_dataset_path + '/test_set/' + second_class
+
+"""
+training_set_path = 'C:/Users/Anna/CNN/CNN_rtg_cardiomegaly/dataset/training_set'
+ilness_path_training = 'C:/Users/Anna/CNN/CNN_rtg_cardiomegaly/dataset/training_set/' + first_class
+no_ilness_path_training = 'C:/Users/Anna/CNN/CNN_rtg_cardiomegaly/dataset/training_set/' + second_class
+test_set__path = 'C:/Users/Anna/CNN/CNN_rtg_cardiomegaly/dataset/test_set'
+ilness_path_test = 'C:/Users/Anna/CNN/CNN_rtg_cardiomegaly/dataset/test_set/' + first_class
+no_ilness_path_test = 'C:/Users/Anna/CNN/CNN_rtg_cardiomegaly/dataset/test_set/' + second_class
+"""
+
+>>>>>>> d9c674051069125b32634da1ae7491fd5d755c2e
 
 os.mkdir(training_set_path)
 os.mkdir(test_set__path)

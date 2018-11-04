@@ -141,8 +141,13 @@ classifier.fit_generator(training_set,
 
 class_labels = {v: k for k, v in training_set.class_indices.items()} # creates a dictionary with mapping, ex. 0 = cat, 1 = dog
  
+<<<<<<< HEAD
 test_image = imread('Card dataset/single_prediction/00000045_000.png')
 test_image = np.resize(test_image, (64,64,1))
+=======
+test_image = imread(dataset_path + 'single_prediction/00000045_000.png')
+test_image = np.resize(test_image, (64,64))
+>>>>>>> d9c674051069125b32634da1ae7491fd5d755c2e
 test_image = np.expand_dims(test_image, axis=0) 
 """ Adding another dimension to image, because predict function uses 4 dimensions - last one for batch number 
     Args:
